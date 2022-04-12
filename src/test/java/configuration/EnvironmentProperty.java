@@ -23,14 +23,28 @@ public class EnvironmentProperty {
     private final String app_environment;
     private static Logger logger = LoggerFactory.getLogger("EnvironmentProperty");
     private final BrowserEnvironment browserEnvironment;
+    private String firstName = "Karolina";
+    private String secondName = "Kowalska";
+    private String mail = "karolina@wp.pl";
+    private String age = "28";
+    private String continent = "europe";
 
     private EnvironmentProperty() {
         this.app_environment = initAppEnvironment();
         this.browserEnvironment = new BrowserEnvironment();
         this.initEnv();
+        this.initProperties();
 
     }
 
+    public void initProperties(){
+        this.firstName = PropertiesStore.ENVIRONMENT.isSpecified() ? PropertiesStore.ENVIRONMENT.getValue() : this.firstName;
+        this.secondName = PropertiesStore.ENVIRONMENT.isSpecified() ? PropertiesStore.ENVIRONMENT.getValue() : this.secondName;
+        this.mail = PropertiesStore.ENVIRONMENT.isSpecified() ? PropertiesStore.ENVIRONMENT.getValue() : this.mail;
+        this.age = PropertiesStore.ENVIRONMENT.isSpecified() ? PropertiesStore.ENVIRONMENT.getValue() : this.age;
+        this.continent = PropertiesStore.ENVIRONMENT.isSpecified() ? PropertiesStore.ENVIRONMENT.getValue() : this.continent;
+
+    }
     private static String initAppEnvironment() {
         return PropertiesStore.ENVIRONMENT.isSpecified() ? PropertiesStore.ENVIRONMENT.getValue() : "";
     }
@@ -103,5 +117,8 @@ public class EnvironmentProperty {
         private static final EnvironmentProperty INSTANCE = new EnvironmentProperty();
         //private EnvironmentPropertySingleton() {
         //}
+    }
+    public int getIntValue(String key) {
+        return Integer.parseInt(key);
     }
 }

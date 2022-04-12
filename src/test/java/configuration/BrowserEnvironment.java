@@ -25,6 +25,7 @@ public class BrowserEnvironment {
         this.webElementTimeOut = 15;
         this.browserName= PropertiesStore.BROWSER.isSpecified() ? PropertiesStore.BROWSER.getValue() : this.browserName;
         this.initBrowserSettings();
+
     }
 
     private void initBrowserSettings() {

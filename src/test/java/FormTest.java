@@ -9,19 +9,19 @@ public class FormTest extends TestBase {
     @Test
     public void fillForm() {
         FormPage formPage = new FormPage(driver);
-        formPage.setName(System.getProperty("firstName"));
+        formPage.fillName(System.getProperty("firstName"));
         log.info("***** Name is correctly set *****");
-        formPage.setSecondName(System.getProperty("secondName"));
+        formPage.fillSecondName(System.getProperty("secondName"));
         log.info("***** Second name is correctly set *****");
-        formPage.setMail(System.getProperty("mail"));
+        formPage.fillMail(System.getProperty("mail"));
         log.info("***** Mail is correctly set *****");
         formPage.selectGenderOption();
         log.info("***** Gender option is correctly selected *****");
-        formPage.setAge(Integer.parseInt(System.getProperty("age")));
+        formPage.fillAge(environmentProperty.getIntValue(System.getProperty("age")));
         log.info("***** Age is correctly set *****");
-        formPage.setYearOfExperience();
+        formPage.fillYearOfExperience();
         log.info("***** Year of experience is correctly selected *****");
-        formPage.setAutomationTesterProfession();
+        formPage.fillAutomationTesterProfession();
         log.info("***** Profession is correctly selected *****");
         formPage.selectContinent(System.getProperty("continent"));
         log.info("***** Continent is correctly selected *****");

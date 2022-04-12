@@ -12,12 +12,7 @@ public enum PropertiesStore {
     BROWSER("browser"),
     BROWSER_WEBELEMENT_TIMEOUT("browser.webelement.timeout"),
     HEADLESS("browser.headless"),
-    ENVIRONMENT("environment"),
-    FIRST_NAME("first.name"),
-    SECOND_NAME("second.name"),
-    MAIL("mail"),
-    AGE("age"),
-    CONTINENT("continent");
+    ENVIRONMENT("environment");
 
 
     private String value;

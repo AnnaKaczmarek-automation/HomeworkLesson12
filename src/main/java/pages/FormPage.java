@@ -53,15 +53,15 @@ public class FormPage {
     @FindBy(id = "validator-message")
     private WebElement validatorMessage;
 
-    public void setName(String name) {
+    public void fillName(String name) {
         nameInput.sendKeys(name);
     }
 
-    public void setSecondName(String secondName) {
+    public void fillSecondName(String secondName) {
         secondNameInput.sendKeys(secondName);
     }
 
-    public void setMail(String mail) {
+    public void fillMail(String mail) {
         mailInput.sendKeys(mail);
     }
 
@@ -77,15 +77,15 @@ public class FormPage {
         return elements.get(randomIndex);
     }
 
-    public void setAge(int age) {
+    public void fillAge(int age) {
         ageInput.sendKeys(String.valueOf(age));
     }
 
-    public void setYearOfExperience() {
+    public void fillYearOfExperience() {
         getRandomElement(yearOfExperience);
     }
 
-    public void setAutomationTesterProfession() {
+    public void fillAutomationTesterProfession() {
         profession.click();
     }
 
